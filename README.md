@@ -1,13 +1,15 @@
 # Linux Server Configuration
 
-**IP Adress:** 54.68.7.26
-**SSH port:** 2200
-**Address:** http://54.68.7.26/events
+#### Details
+
+- **IP Adress:** 54.68.7.26
+- **SSH port:** 2200
+- **Address:** http://54.68.7.26/events
 
 
 Unless otherwise indicated, all the Linux shell instructions are done logged as `root`
 
-##### Launch your Virtual Machine with your Udacity account.
+#### Launch your Virtual Machine with your Udacity account.
 Content of **udacity_key.rsa**:
 ```
 -----BEGIN RSA PRIVATE KEY-----
@@ -39,30 +41,30 @@ qAd9w4srAk2UYZ8lPnAVUjZxoCreIAL6w/6ktGRmzYC0oLPLE0QhmPrDvNI1zoK7
 -----END RSA PRIVATE KEY-----
 ```
 
-##### Follow the instructions provided to SSH into your server
+#### Follow the instructions provided to SSH into your server
 `ssh -i ~/.ssh/udacity_key.rsa root@54.68.7.26`
 
-##### Create a new user named `grader`
+#### Create a new user named `grader`
 `adduser grader`.
 
 Locally I created a key pair using `ssh-keygen`, copied the content of the public key and, logged as `root`, I created the file `/home/grader/.ssh/authorized_keys` and pasted the content.
 
-##### Give the `grader` the permission to sudo
+#### Give the `grader` the permission to sudo
 I created a file named `grader` in `/etc/sudoers.d` with the content:
 
 `grader ALL=(ALL) NOPASSWD:ALL`
 
-##### Update all currently installed packages
+#### Update all currently installed packages
 ```
 $ apt-get update
 $ apt-get upgrade
 $ apt-get autoremove
 ```
 
-##### Change the SSH port from 22 to 2200
+#### Change the SSH port from 22 to 2200
 Using `nano` editor, I changed `Port 22` by `Port 2200` in the file `/etc/ssh/sshd_config` and then `ssh restart`.
 
-##### Configure the Uncomplicated Firewall (UFW) to only allow incoming connections for SSH (port 2200), HTTP (port 80), and NTP (port 123)
+#### Configure the Uncomplicated Firewall (UFW) to only allow incoming connections for SSH (port 2200), HTTP (port 80), and NTP (port 123)
 ```
 $ ufw default deny incoming
 $ ufw default allow outgoing
@@ -72,16 +74,16 @@ $ ufw allow ntp
 $ ufw enable
 ```
 
-##### Configure the local timezone to UTC
+#### Configure the local timezone to UTC
 `hwclock --utc --systohc`
 
-##### Install and configure Apache to serve a Python mod_wsgi application
+#### Install and configure Apache to serve a Python mod_wsgi application
 `apt-get install apache2`
 
-##### Install and configure PostgreSQL:
+#### Install and configure PostgreSQL:
 `apt-get install postgresql`
 
-##### Do not allow remote connections
+#### Do not allow remote connections
 Allow remote connections is disabled by default when installing **PostgreSQL** from the Ubuntu repositories, but I double checked with
 ````
 cat /etc/postgresql/9.5/main/pg_hba.conf
@@ -95,7 +97,7 @@ host    all             all             127.0.0.1/32            md5
 host    all             all             ::1/128                 md5
 ```
 
-##### Create a new user named `catalog` that has limited permissions to your catalog application database
+#### Create a new user named `catalog` that has limited permissions to your catalog application database
 Once PostgreSQL installed, I changed to the default user `su - postgres`, then created the `catalog` user with `createuser --interactive`.
 
 Then created the `events` database with `createdb events`. After that, I got into PostgreSQL shell with `psql` and deny acces to all users except `postgres` to all the existing databases, **postgres**, **template0** and **template1** using
@@ -104,7 +106,7 @@ REVOKE ALL ON DATABASE <database> FROM PUBLIC;
 ```
 This way, as by default databases are created with public access, `catalog` user will be able to access **only** to `events` database.
 
-##### Install git, clone and setup your Catalog App project (from your GitHub repository from earlier in the Nanodegree program) so that it functions correctly when visiting your server’s IP address in a browser. Remember to set this up appropriately so that your .git directory is not publicly accessible via a browser!
+#### Install git, clone and setup your Catalog App project (from your GitHub repository from earlier in the Nanodegree program) so that it functions correctly when visiting your server’s IP address in a browser. Remember to set this up appropriately so that your .git directory is not publicly accessible via a browser!
 
 I installed Git using `apt-get install git`, went to directory `/var/www` and then cloned my Git respository using
 ```
