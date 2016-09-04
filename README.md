@@ -45,9 +45,9 @@ qAd9w4srAk2UYZ8lPnAVUjZxoCreIAL6w/6ktGRmzYC0oLPLE0QhmPrDvNI1zoK7
 `ssh -i ~/.ssh/udacity_key.rsa root@54.68.7.26`
 
 #### Create a new user named `grader`
-`adduser grader`.
+`adduser grader`
 
-Locally I created a key pair using `ssh-keygen`, copied the content of the public key and, logged as `root`, I created the file `/home/grader/.ssh/authorized_keys` and pasted the content.
+Locally, I created a key pair using `ssh-keygen`, copied the content of the public key and, logged in the Linux server as `root`, I created the file `/home/grader/.ssh/authorized_keys` and pasted the content.
 
 #### Give the `grader` the permission to sudo
 I created a file named `grader` in `/etc/sudoers.d` with the content:
@@ -78,7 +78,8 @@ $ ufw enable
 `hwclock --utc --systohc`
 
 #### Install and configure Apache to serve a Python mod_wsgi application
-`apt-get install apache2`
+`$ apt-get install apache2`
+`$ apt-get install libapache2-mod-wsgi`
 
 #### Install and configure PostgreSQL:
 `apt-get install postgresql`
@@ -100,7 +101,7 @@ host    all             all             ::1/128                 md5
 #### Create a new user named `catalog` that has limited permissions to your catalog application database
 Once PostgreSQL installed, I changed to the default user `su - postgres`, then created the `catalog` user with `createuser --interactive`.
 
-Then created the `events` database with `createdb events`. After that, I got into PostgreSQL shell with `psql` and deny acces to all users except `postgres` to all the existing databases, **postgres**, **template0** and **template1** using
+Then created the `events` database with `createdb events`. After that, I got into PostgreSQL shell with `psql` and denied acces to all users except `postgres` to all the existing databases, **postgres**, **template0** and **template1** using
 ```
 REVOKE ALL ON DATABASE <database> FROM PUBLIC;
 ```
@@ -116,7 +117,7 @@ git clone https://github.com/manelromero/catalog.git --branch linux
 I then changed the `/etc/apache2/sites-enabled/000-default.conf` file content to
 ```
 <VirtualHost *:80>
-	ServerName example.com
+	ServerName 54.68.7.26
 	
 	WSGIScriptAlias / /var/www/catalog/events.wsgi
 
