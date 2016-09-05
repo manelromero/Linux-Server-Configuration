@@ -5,39 +5,40 @@
 - **IP Adress:** 54.68.7.26
 - **SSH port:** 2200
 - **Address:** http://54.68.7.26/events
+- **User `grader` password:** UdaLinuxProject2016
 
 
 Unless otherwise indicated, all the Linux shell instructions are done logged as `root`
 
 #### Launch your Virtual Machine with your Udacity account.
-Content of **udacity_key.rsa**:
+Content of **grader.rsa**:
 ```
 -----BEGIN RSA PRIVATE KEY-----
-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
+MIIEowIBAAKCAQEAyWTkj+NJNwrolVhskbxxLv+j7bopMPgdXj0FLdWiq6dWE4IO
+I0CIjc5b/D5yI0D5JpCJfCR0YFLiAayCjS/wL8/Yw0K/FXdfoi01FiQtE+tDmC64
+WcynqCLJy9dX+Yaq2AWfiEY/AoAUWur8S6lOOFlWTCytPhnGsDEm8TbCs9/Lf/gx
+m6ylnnaIsoQu58p5GXjUcRW8ezK4mlk/hh9HdQne8SrkXlR6gwdD3e5BmWyJDKuB
+CLJb3h+pP/GW/2Zx+TG93gnrYMztPKC07MQHLe2f+MHuNdfBzQIy3ymFi7UUjlIe
++FI5EJMxyyR9aVMucifjwlVIkDyZC5EtVJ94tQIDAQABAoIBAFqalWlWa53jvndR
+7KY0DQeD4xAUbGundC7tbOMN9b0b71GfdRTO96A0cpWs0lSh6nU7GV9MVz7uitcN
+8T3rjzczXuWZpbXWmqOviu6HH/CSKzrP6ggcVmECJZ8bJm0P9NRy0y7Py5EoZf/x
+L8gqRxJ6vqROhTInDog91LM4W6fn/inRYqpGCgC1uPGv0H3J2aZFptwfRc5k55Ah
+RfKxBKuMS9MiTNcTvv3qsDAe6TiG+QCMUZSt6THuLntIvloT7YPsoMKxOJyPJmKZ
+f0AbqM+jHkDhKD2TW36qczeKvvEw5WSTwJpk6yvBUeD7G2ETaiBviTY6xAhUWX8M
+YixlqhECgYEA85wo7JaKvkQxE9fIC54huGWNNX56Zh8fbz8Q1NY5xMNlBaRIdXpH
+eFWVsrRtRbT8gnBlLq0eSeOcH3v0bhKAKO+xw0rglnl+Sre6afjzmrewU57RBRyo
+qGfvK1N5yLoKp3J5x1l+piqMFBkvCZWaZSKpsxuFeX17ZDUiTWIlXPcCgYEA06MT
+VmxPrSei5wT1+vOTgJ+ky4+s3A7zG+KWIEJvMEXmolx+r9NFUuCR6vOKR7behpAA
+14GusUFEAxoX0Z9lQ6e24dFY0IeFn2m02tzMEwlTF7v9roTIftNctjBlq47zD3ZG
+HaLgcgCyW+C7hL1C87fPPLj54gJkqv8n6Mv2SLMCgYAxpHHmfGr7iNPjckZur6O5
+euBCtWpl4xO5zMU2Sg1tnk+4zZiCcA+eYvpld0UJPm9yeUr1LwwMDJjlBZJy18xM
+C0RTQq/vmgR1X2labQPfVG1XLPb1Lrjj0II5dwJLODYxly9fw0n+vI7dDaC7OERF
+NcIVIJebgUmiyv0ZfdWVUwKBgHLWFQMbCGzTihBC39pI2uu7NGeEUW6i6gVigMWG
+ZuDRvSCygceUIxSiaGsNtSXOs5ZegyZs5salvGrWeMA09nSsh46m0sNsFfR3Hjx3
+/IAD2kORrUhKIqS2uaLeRfy+N2NXcRpZq+IQQLecDQQs0ix+u4Oed3DMjaU/iH9I
+VR4DAoGBAI+oTyNSdD6stupfnRroNC5CMb7+XMXCW0T0bC8f/5700CUM8/z+s9Gk
+rsi6GSECT4/X2iL0GImtIl3gi33auqZ9kMTEYv7GlXek3Fe9AE74AF7b/Ml9vfo6
+soW1FZHo6Bt6P0Jr+C1MduD4jC4ojmwqi2L8oPubpmlC7Iu20TXf
 -----END RSA PRIVATE KEY-----
 ```
 
@@ -125,3 +126,10 @@ I then changed the `/etc/apache2/sites-enabled/000-default.conf` file content to
 	CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
 ```
+
+#### Changes made after first project submission
+I changed to `PermitRootLogin no` in the `/etc/ssh/sshd_config` file and then restarted the ssh server with `service ssh restart` in order to avoid `root` login.
+
+Logged as `grader`, I deleted the firewall rules that were allowing ssh connection in port 22 finding the rule number with `sudo ufw status numbered` and deleting the rules with `sudo ufw delete 2`
+
+I add the `grader` user password to the beginning of this file and changed the RSA private key for the one of the `grader` user as `root` remote connections are not allowed anymore.
